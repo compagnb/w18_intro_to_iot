@@ -70,7 +70,7 @@
     * Ring A Bell For Tweets
     * Flash Email As Morse Code
 
-Week 5: Robotics
+#### Week 5: Robotics
 * Parts/Hardware
 * Communication Reinforcement
 * **In-class Exercise/Challenges**:
@@ -78,12 +78,12 @@ Week 5: Robotics
     * Create a web game & joystick.
 
 
-Week 6: Machine to Machine Communication
-Publishing
-Subscribing
-In-class Exercise/Challenges:
- Temperature Monitor
-Create a web game & joystick.
+#### Week 6: Machine to Machine Communication
+* Publishing
+* Subscribing
+* In-class Exercise/Challenges:
+    * Temperature Monitor
+    * Create a web game & joystick.
 
 
 
