@@ -5,6 +5,7 @@
 ### Internet Of Things (IoT)
 * “the interconnection via the Internet of computing devices embedded in everyday objects, enabling them to send and receive data” - dictionary.com
 * It is taking a “less intelligent” item, and make it “Smarter” by controlling it through HTTP (Hyper-Text Transfer Protocol)  Requests through the web server.
+![Cloud](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/cloudservice.png "cloud")
 * Some examples of some IoT projects could be:
     * Home Automations
     * Ski Condition Alert
@@ -14,6 +15,7 @@
 
 ### Web Basics Review
 * A browser is an application running on your computer (or smartphone, tablet, etc.) that makes it possible for us to see a webpage. Examples of browsers are: Safari, Chrome, Firefox, Internet Explorer, Opera, etc
+![BROWSER](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/browser.png "Browser")
 * Web Servers are computers that are always connected to the internet, and send data out when requested. 
 * If you enter a URL (web address) into the browser, this information is divided up into smaller pieces
     * Protocol - (How?) It tells the computer how to talk to the server.
@@ -30,19 +32,19 @@
 * Domain Name System (DNS) Server translates domain names and hostnames into an IP address. This works like a big phone book! 
 * Internet Protocol Address (IP Address) is a unique string of numbers separated by periods thatidentify each computer connected using an Internet Protocol to communicate over a network. (i.e. 127.0.0.0)
 * The browser sends a message to the web server called an HTTP Request. It answers the browser with an HTTP Respond. 
-![MAP](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/httprr.png "map")
     * If the server cannot find what the browser requested, the HTTP Response is a 404 error. 
     * HTTP stands for HyperText Transfer Protocol. It was designed to download so-called hypertext documents (web pages) and to send some basic information back to the web server.
     * Web pages are created using the formatting language HTML, or HyperText Markup Language.
 
 ### All About Communication
-Web development is all about the communication between 2 parties:
-The client, which requests pages from the server, and displays them to the user. This is usually coded in HTML, CSS and JavaScript.
-The server, which is responsible for serving pages. This is usually programmed in Python, Rails, Java, SQL, JavaScript, etc.
-In most cases, the client is a web browser, but this could also be another device that is connected to the internet.
-Client Side Programming - make interactive web pages, as well as, making stuff happen dynamically on a web page and can interact with temporary storage, and local storage (cookies, localStorage) 
-Server Side Programming - processes user input, displays pages, structures web applications, and interacts, with permanent storage (database & files).
-
+* Web development is all about the communication between 2 parties:
+* The client, which requests pages from the server, and displays them to the user. This is usually coded in HTML, CSS and JavaScript.
+* The server, which is responsible for serving pages. This is usually programmed in Python, Rails, Java, SQL, JavaScript, etc.
+* In most cases, the client is a web browser, but this could also be another device that is connected to the internet.
+* Client Side Programming - make interactive web pages, as well as, making stuff happen dynamically on a web page and can interact with temporary storage, and local storage (cookies, localStorage) 
+* Server Side Programming - processes user input, displays pages, structures web applications, and interacts, with permanent storage (database & files).
+![Without Database](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/wodatabase.png "without database")
+![With Database](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/wdatabase.png "with database")
 
 
 IoT Platforms
