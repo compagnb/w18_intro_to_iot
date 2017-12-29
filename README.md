@@ -38,6 +38,8 @@
     * Blink the blue LED.
     * Control the blue LED.
     * Build the Morse Code Flasher App.
+* **Vocabulary**:
+    * 
 
 #### Week 2: Schematics
 * Breadboards 
