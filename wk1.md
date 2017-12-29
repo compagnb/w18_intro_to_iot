@@ -24,10 +24,10 @@
     * **Path** - (What?) It tells the computer what you are requesting to view. 
 * After we connect to the web through an ISP...
 ![MAP](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/map.png "map")
-    * The Browser connects to the DNS server.
-    * The DNS server then tells the browser the location of the web server hosting the site.
-    * The IP Address that the DNS server returns to your computer allows your browser to contact the web server that hosts the website you requested.
-    * The web server then sends the page you requested back to your web browser.
+    1. The Browser connects to the DNS server.
+    2. The DNS server then tells the browser the location of the web server hosting the site.
+    3. The IP Address that the DNS server returns to your computer allows your browser to contact the web server that hosts the website you requested.
+    4. The web server then sends the page you requested back to your web browser.
 * **Internet Service Provider (ISP)** is a company that provides access to the internet. (i.e. Verizon, optimum, aol)
 * **Domain Name System (DNS) Server** translates domain names and hostnames into an IP address. This works like a big phone book! 
 * **Internet Protocol Address (IP Address)** is a unique string of numbers separated by periods thatidentify each computer connected using an Internet Protocol to communicate over a network. (i.e. 127.0.0.0)
@@ -48,14 +48,28 @@
 
 
 ### IoT Platforms
-* Arduino
-    * 
-* RF Duino
-    * 
-* Raspberry Pi
-    * 
-* Photon
-    * 
+* A **Microcontroller** is a small low power computer on a single integrated circuit. 
+* **MicroComputers** are
+#### Arduino
+* Arduino is a microcontroller that has input/output pins for electronics that the microcontroller can "control".
+* The software is open-source, meaning that nothing is hidden, and we can completely modify it as needed.
+* Additional shields can further an arduino's capabilities, allowing for wifi, bluetooth, motor, audio control. 
+* Arduino Uno does not have network capabilities without a wifi or ethernet shield. Arduino Yun does.
+![Arduino](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/arduino.jpg "arduino")
+
+#### RF Duino
+* A smaller Arduino-like microcontroller with a wireless enabled microcontroller. 
+* Additional shields can further an RFDuino's capabilities; programming these boards requires a usb shield.
+![rfduino](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/rfduino.png "rfduino")
+
+#### Raspberry Pi
+* These are small computers on a single card. They have an HDMI port and USB ports, allowing us to plugin a keyboard and monitor. 
+* These require a small usb adapter to connect to the internet.
+![pi](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/pi.png "pi")
+
+#### Photon
+* 
+![photon](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/photon.png "photon")
 
 ### Set-up
 * Cloud 9 Set-up
