@@ -108,7 +108,7 @@
         * To complile the program type: **particle compile**. This will send your file up to the Particle cloud, compile it, and download the binary output of the compile operation.
         * You can also flash the code to a device using particle **flash YOUR_TARGET_DEVICE_ID**.
         
-#### Particle Cloud Overview (from Particle Support Website)
+#### Particle Cloud Overview (from Particle Support Website  )
 ![Particle Cloud](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/particlecloud.png "Particle Cloud")
 * Particle Build is an **Integrated Development Environment**, or IDE. (IDE's allow software development in an application.
 * The **Navigation bar** is on the left. On the top, there are three buttons, which serve important functions:
@@ -124,6 +124,54 @@
 * Keyboard shortcuts: https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts
 
 ### C /C# Syntax
+Every new application for the Photon or Arduino should begin with this skeleton:
+``` C 
+
+void setup(){
+    
+}
+
+void loop(){
+    
+}
+
+```
+* When we start a new program we always have to include two functions, they are: **void setup** & **void loop**. They are called with a **void** because functions need to specify a type, since neither of these has a type, they are considered void. 
+* The **setup** function is similar to an init in Java and Python Classes, it will only run once -- to set the program/class/object up. 
+* The **loop** function, loops until it is told to stop. 
+* The **( )** next to each of these functions will hold parameters, or variables that we can pass through the function. 
+* The **{ }** will hold the contents of each of the functions. All of our code is written within these two brackets, and will end with a **;** after each line.
+* **Indent each of the lines of code appropriately, so that it is easy to see what it belongs to. 
+
+#### RGB Blinking
+* Now that we know the syntax, lets write a program to blink the RGB LED on the Photon Board. 
+* Using our skeleton the first thing we need to do in the **setup** function is tell the computer what we will be controlling. We do this here, in the **set-up** because we only have to tell the computer this once... and it will not change. (Just like when Mom tells you to make your bed... )
+* To select the RGB LED, we state the LED we will control, followed by the control function and then set it's parameter to true. 
+``` C 
+void setup(){
+    RGB.control(true);
+}
+```
+* Now that we have control of that LED, we can change its color of the LED. Since we are changing the color of the RGB LED we need to identify this before the color function, like we did earlier with the control function. 
+``` C 
+void loop(){
+    RGB.color(255, 0, 0);
+}
+```
+* The **color** function has three integer parameters, one for **R**ed, one for **G**reen, and one for **B**lue. These numbers go from **0**-**255**. **0** is the absence of that color, and **255** is the full brightness of that color.  
+![RGB color](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/rgb.png "RGB Color")
+
+
+
+**digitalWrite**: Sets the pin to HIGH or LOW, which either connects it to 3.3V (the maximum voltage of the system) or to GND (ground). Pin D7 is connected to an on-board LED; if you set pin D7 to HIGH, the LED will turn on, and if you set it to LOW, it will turn off.
+
+**analogWrite**: Sets the pin to a value between 0 and 255, where 0 is the same as LOW and 255 is the same as HIGH. This is sort of like sending a voltage between 0 and 3.3V, but since this is a digital system, it uses a mechanism called Pulse Width Modulation, or PWM. You could use analogWrite to dim an LED, as an example. 
+
+The Photon has two **DACs (Digital to Analog converters)** onboard connected to pin DAC (A6) and A3, when you select analogWrite on those two pins you can set a value between 0 to 4095 (12bit resolution) and continous analog voltage will be applied at the pin output (not PWM), you can use it for controlling electronic devices that require precision analog voltage setting. Those two pins will be marked in orange color when activated in analogWrite mode (instead of yellow color for the rest of the PWM-enabled pins).
+
+**digitalRead**: This will read the digital value of a pin, which can be read as either HIGH or LOW. If you were to connect the pin to 3.3V, it would read HIGH; if you connect it to GND, it would read LOW. Anywhere in between, it'll probably read whichever one it's closer to, but it gets dicey in the middle.
+
+**analogRead**: This will read the analog value of a pin, which is a value from 0 to 4095, where 0 is LOW (GND) and 4095 is HIGH (3.3V). All of the analog pins (A0 to A7) can handle this. analogRead is great for reading data from sensors.
 
 ### In-class Exercises/Challenges: 
 * Hello World Web Page thru C9.
@@ -140,6 +188,7 @@ Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS,
 ### JavaScript:
 
 ### C /C#:
+digitalWrite, analogWrite, Digital to Analog Converter (DAC), digitalWrite, analogWrite, 
 
 
 
