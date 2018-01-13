@@ -27,12 +27,28 @@
 #### Week 1: Introduction
 * IoT 
 * Web Basics Review
+    * URL Format
+    * How a Webpage Works
 * Communication
+    * HTTP Respond/Request/Errors
+    * Client-side/Server-side Programming
 * IoT Platforms
-* Set-up
-    * Device Set-up
-    * Working in the Cloud 
-* C /C# Syntax
+    * Arduino
+    * Rf-Duino
+    * Raspberry Pi
+    * Photon
+* Set-Up
+    * C9 Web Server Set-up 
+    * Creating an running Webpages on C9 
+    * C9 Particle Set-up
+    * Partical Cloud Overview
+* C /C# Syntax Review
+    * void setup
+    * void loop
+    * Variables
+    * Functions
+    * Types
+    * If Statements
 * **In-class Exercises/Challenges: **
     * Hello World Web Page thru C9.
     * Blink the blue LED.

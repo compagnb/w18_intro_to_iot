@@ -74,6 +74,7 @@
     * There are also pins to allow you to **power** your device, or power motors and outputs outside of your device. 
     * There are pins for **Serial/UART** communication, and a pin for resetting your device.
 ![photon 2](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/photon2.png "photon 2")
+
 * There are several awesome buttons and LEDs on your Photon to make it easier to use.
     * The **SETUP** button is on the left and the **RESET** button is on the right. You can use these buttons to help you set your device's mode.
     * The **RGB LED** is in the center of your Photon, above the module. The color of the RGB LED tells you what mode your Photon is currently in.
@@ -82,36 +83,64 @@
 
 
 ### Set-up
-* Cloud 9 
-    * C9 Web Server Set-up 
-        * Create a **new** workspace. 
-        * Name it using the following format: **username_iot_w18**
-        * Make sure it is a **public** or open workspace.
-        * Choose the box for **node.js**.
-        * Click **Create Workspace**.
-        * Once the IDE has loaded, create a folder for this weeks work called **wk1_exercises**
-    * Creating an running Webpages on C9
-        * Right click on the **wk1_exercises** folder and select new file. When it appears, name the file **index.html** and double click on it to open. 
-        * This will be our homepage for week 1 exercises. You can write HTML code within it, you can also include css and scripts (just as you would on a real web server.)
-        * To preview this page, you can press the run button on the top of the page and then click the link that is sent to the terminal window below, or you can use the following link (since we dont have to complile anything. **https://w18-intro-to-iot-username.c9users.io/wk1_exercises/index.html**.
-    * C9 Particle Set-up 
-        * You should see a terminal window already opened. Click inside to set focus and in the command line, type: **npm install -g particle-cli** to the Particle CLI.
-        * This will take a few seconds to install, but once completed create a new folder called **particle**.
-        * Now, we are ready to start creating particle/photo projects.
-            * To login to the Particle Cloud type: **particle login** and provide your cloud login credentials.
-            * When ready to compile and/or flash make sure the terminal window has been directed to the correct directory. By default, you are in the "~/workspace" directory. To change to your project directory, type: **cd particle**. 
-            * To complile the program type: **particle compile**. This will send your file up to the Particle cloud, compile it, and download the binary output of the compile operation.
-            * You can also flash the code to a device using particle **flash YOUR_TARGET_DEVICE_ID**.
+#### C9 Web Server Set-up
+![C9 Workspace](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/workspace.png "C9 Workspace")
+    * Create a **new** workspace. 
+    * Name it using the following format: **username_iot_w18**
+    * Make sure it is a **public** or open workspace.
+    * Choose the box for **node.js**.
+    * Click **Create Workspace**.
+    * Once the IDE has loaded, create a folder for this weeks work called **wk1_exercises**
+    
+#### Creating an running Webpages on C9
+![C9 HTML](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/html.png "C9 HTML")
+    *  Right click on the **wk1_exercises** folder and select new file. When it appears, name the file **index.html** and double click on it to open. 
+    *  This will be our homepage for week 1 exercises. You can write HTML code within it, you can also include css and scripts (just as you would on a real web server.)
+    * To preview this page, you can press the run button on the top of the page and then click the link that is sent to the terminal window below, or you can use the following link (since we dont have to complile anything. **https://w18-intro-to-iot-username.c9users.io/wk1_exercises/index.html**.
+    
+#### C9 Particle Set-up 
+![C9 particle](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/particle.png "C9 particle")
+    * You should see a terminal window already opened. Click inside to set focus and in the command line, type: **npm install -g particle-cli** to the Particle CLI.
+    * This will take a few seconds to install, but once completed create a new folder called **particle**.
+    * Now, we are ready to start creating particle/photo projects.
+        * To login to the Particle Cloud type: **particle login** and provide your cloud login credentials.
+        * When ready to compile and/or flash make sure the terminal window has been directed to the correct directory. By default, you are in the "~/workspace" directory. To change to your project directory, type: **cd particle**. 
+        * To complile the program type: **particle compile**. This will send your file up to the Particle cloud, compile it, and download the binary output of the compile operation.
+        * You can also flash the code to a device using particle **flash YOUR_TARGET_DEVICE_ID**.
+        
+#### Particle Cloud Overview (from Particle Support Website)
+![Particle Cloud](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/particlecloud.png "Particle Cloud")
+* Particle Build is an **Integrated Development Environment**, or IDE. (IDE's allow software development in an application.
+* The **Navigation bar** is on the left. On the top, there are three buttons, which serve important functions:
+    * **Flash**: Flashes the current code to the device. This initiates an over-the-air firmware update and loads the new software onto your device.
+    * **Verify**: This compiles your code without actually flashing it to the device; if there are any errors in your code, they will be shown in the debug console on the bottom of the screen.
+    * **Save**: Saves any changes you've made to your code.
+* At the bottom, there are four more buttons to navigate through the IDE:
+    * **Code**: Shows a list of your firmware applications and lets you select which one to edit/flash.
+    * **Library**: Explore libraries submitted by other users, and develop your own.
+    * **Docs**: Brings you to the documentation for Particle.
+    * **Devices**: Shows a list of your devices, so you can choose which to flash, and get more information on each device.
+    * **Settings**: Change your password, log out, or get your access token for API calls.
+* Keyboard shortcuts: https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts
 
 ### C /C# Syntax
+
 ### In-class Exercises/Challenges: 
+* Hello World Web Page thru C9.
 * Build HTML/Javascript version of Madlibs.
 * Blink the blue LED
 * Control the blue LED
 * Build the Morse Code Flasher App.
 
 ### Vocabulary:
-Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS, IP Address, HTTP Request, HTTP Respond, Client Side Programming, Server Side Programming
+Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS, IP Address, HTTP Request, HTTP Respond, Client Side Programming, Server Side Programming, Microcontroller, Micro-Computer
+
+### HTML Tags:
+
+### JavaScript:
+
+### C /C#:
+
 
 
 
