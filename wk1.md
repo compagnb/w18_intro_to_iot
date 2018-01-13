@@ -143,7 +143,7 @@ void loop(){
 * The **{ }** will hold the contents of each of the functions. All of our code is written within these two brackets, and will end with a **;** after each line.
 * **Indent each of the lines of code appropriately, so that it is easy to see what it belongs to. 
 
-#### RGB Blinking
+#### Photon Exercise 1: Photo Exercise 1: Control The RGB LED
 * Now that we know the syntax, lets write a program to blink the RGB LED on the Photon Board. 
 * Using our skeleton the first thing we need to do in the **setup** function is tell the computer what we will be controlling. We do this here, in the **set-up** because we only have to tell the computer this once... and it will not change. (Just like when Mom tells you to make your bed... )
 * To select the RGB LED, we state the LED we will control, followed by the control function and then set it's parameter to true. 
@@ -161,7 +161,18 @@ void loop(){
 * The **color** function has three integer parameters, one for **R**ed, one for **G**reen, and one for **B**lue. These numbers go from **0**-**255**. **0** is the absence of that color, and **255** is the full brightness of that color.  
 ![RGB color](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/rgb.png "RGB Color")
 
+* If we add another color change to our code, it will change the color... but the change will happen so fast that we will not be able to see it. In this case we can use a built in function called **delay**. 
+``` C 
+void loop(){
+    RGB.color(255, 0, 0);
+    delay(2000);
+    RGB.color(0, 255, 0);
+    delay(2000);
+}
+```
+* The **delay** function hold a numberic parameter representative of milliseconds. This function will stop the loop from running until the amount of millisends in the parameter has passed. This is really important when creating applications that will update data... too long a delay may create a lag in the information, while to short of a delay could create a communication error. 
 
+#### Photon Exercise 2: Blink the D0 and D7 LEDs
 
 **digitalWrite**: Sets the pin to HIGH or LOW, which either connects it to 3.3V (the maximum voltage of the system) or to GND (ground). Pin D7 is connected to an on-board LED; if you set pin D7 to HIGH, the LED will turn on, and if you set it to LOW, it will turn off.
 
@@ -176,8 +187,8 @@ The Photon has two **DACs (Digital to Analog converters)** onboard connected to 
 ### In-class Exercises/Challenges: 
 * Hello World Web Page thru C9.
 * Build HTML/Javascript version of Madlibs.
-* Blink the blue LED
-* Control the blue LED
+* Photo Exercise 1: Control the RGB LED.
+* Photon Exercise 2: Blink the D0 and D7 LEDs.
 * Build the Morse Code Flasher App.
 
 ### Vocabulary:
