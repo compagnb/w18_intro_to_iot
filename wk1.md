@@ -73,6 +73,7 @@
     * **GPIO** pins can be hooked to sensors or buttons to listen to the world, or they can be hooked to lights and buzzers to act upon the world. 
     * There are also pins to allow you to **power** your device, or power motors and outputs outside of your device. 
     * There are pins for **Serial/UART** communication, and a pin for resetting your device.
+    * The Photon has two **DACs (Digital to Analog converters)** onboard connected to pin DAC (A6) and A3, when you select analogWrite on those two pins you can set a value between 0 to 4095 (12bit resolution) and continous analog voltage will be applied at the pin output (not PWM), you can use it for controlling electronic devices that require precision analog voltage setting. Those two pins will be marked in orange color when activated in analogWrite mode (instead of yellow color for the rest of the PWM-enabled pins).
 ![photon 2](https://github.com/compagnb/w18_intro_to_iot/blob/master/imgs/photon2.png "photon 2")
 
 * There are several awesome buttons and LEDs on your Photon to make it easier to use.
@@ -173,34 +174,117 @@ void loop(){
 * The **delay** function hold a numberic parameter representative of milliseconds. This function will stop the loop from running until the amount of millisends in the parameter has passed. This is really important when creating applications that will update data... too long a delay may create a lag in the information, while to short of a delay could create a communication error. 
 
 #### Photon Exercise 2: Blink the D0 and D7 LEDs
+* In order to blink LEDs set to other pins on the Photon board, first we need to declare **global** variables to hold the pin information. 
+``` C
+int led0 = D0;
+int led7 = D7;
+ ```
+    * These are declared first and outside of all other functions, so that they can be used in all of the functions we write. These types are variables are also known as **Global**.
+    * Notice how each of the variables have a type defined next to the name. Even though they may not look like numbers, they are the pin number that we are assigning.  
+    * The **D0** pin does not control an LED on the photon board itself, so we will need to wire an LED to the pin labeled D0 (Digital 0). 
+    * The **D7** pin not only controls the D7 (Digital 7) pin, but also controls a small LED next to it on the board. 
+* With the variables declared, now we have to initialize them. This will take place in the **set up function**.
+``` C
+void setup(){
+    // initialize the pins as output
+    pinMode(led0, OUTPUT);
+    pinMode(led7, OUTPUT);
+}
+```
+    * The **pinMode** function requires two parameters, one to list what pin will be setup and the other to tell us how that pin will be used. 
+    * **OUTPUT** allows us to controll the voltage flowing out of that pin, while **INPUT** allows us to read what is coming into that pin. * The **pinMode** is called in the **setup** function/method, because it only needs to be called once. 
+* Now that each of our pins are declared and initialized, we can turn them on and off in the **loop** method. 
+``` C
+void loop(){
+    digitalWrite(led0, HIGH);
+    digitalWrite(led7, HIGH);
+    delay(1000);
+    digitalWrite(led0, LOW);
+    digitalWrite(led7, LOW);
+    delay(1000);
+}
+```
+    * The **digitalWrite** function takes two parameters, one for the pin and one for HIGH or LOW. It sets the pin to HIGH or LOW, which either connects it to 3.3V (the maximum voltage of the system) or to GND (ground). 
+   
+### Creating Custom Functions/Methods
+* Up until now, we have only been using built-in functions, but you can also write custom functions as you can when coding in other languages. 
+* These follow the same format as the **setup** and **loop** functions
+``` C
+type name(type parameter1, type parameter2 ){
+    //lines of code here.
+}
+```
 
-**digitalWrite**: Sets the pin to HIGH or LOW, which either connects it to 3.3V (the maximum voltage of the system) or to GND (ground). Pin D7 is connected to an on-board LED; if you set pin D7 to HIGH, the LED will turn on, and if you set it to LOW, it will turn off.
+### Types & Other Syntax
+* **int** is a type for whole numbers, positive or negative, between **-2,147,483,648** to **-2,147,483,647**. Although there is also a **long** type, the **int** type will cover just about all the whole numbers needed... so there is little point in using anything else. It is good to use **int**s for pins, counting, etc.
+* **float** is the type used for floating points like decimals. These range from **-3.4028235E+38** to **3.4028235E+38**. (E+38 means that there are 38 0's on the end of the number.) 
+* **double** is the 64bit version of a float. Because it has more places in it, it can be more accurate then a float. It is good to use **floats**s and **double**s for sensor readings like temperature, pressure, etc. It will take the computer longer to compute using floats and even longer for doubles, so only use them if needed. 
+* **true** and **false** are used as boolean values, as with other languages.
+* **string** is used to hold text, as with other languages.
+    * You can also use the **length** function to determine the length of a string or the **charAt** to determine the letter at a specific space. The charAt method will count from 0 like an array, so take that into account when coding.
+    ```C
+    string = "strings are just text";
+    strLength = string.length();
+    thirdCharacter = string.charAT(2);
+    ```
+* **Arrays** will hold multiple variables. They need a type to declare, and have **[]** after the name. For example:
+``` C
+int numbArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9 }
+```
+    * Loops can be called similar to other languages, although the syntax may be a little different. **for** loops are good for counting, and iterating through Arrays.
+    ``` C
+    for (int i = 0; i < 9; i++){
+        //repeatable code gets written here.
+    }
+    ```
+* Basic **if** Statements are written like so:
+```C
+if (i > 10){
+    //Do something
+}
+```
+    * **==** is used to say something is equal to
+    * **!=** is used to say something is not equal to
+    * **<** is used to say something is less than
+    * **<=** is used to say something is less than or equal to
+    * **>** is used to say something is greater than
+    * **>=** is used to say something is greater than or equal to
+* If you have more then one condition that needs to be met, they can be written like so:
+```C
+if (i > 10 && i < 20){
+    //Do something
+}
+```
+    * **&&** is used to say both conditions need to be met
+    * **||** is used to say the one of the conditions need to be met
+* In addition to digitalWrite, there are some other built in functions that control pin activity:
+    * **analogWrite**: Sets the pin to a value between 0 and 255, where 0 is the same as LOW and 255 is the same as HIGH. This is sort of like sending a voltage between 0 and 3.3V, but since this is a digital system, it uses a mechanism called Pulse Width Modulation, or PWM. You could use analogWrite to dim an LED, as an example. 
+    * **digitalRead**: This will read the digital value of a pin, which can be read as either HIGH or LOW. If you were to connect the pin to 3.3V, it would read HIGH; if you connect it to GND, it would read LOW. Anywhere in between, it'll probably read whichever one it's closer to, but it gets dicey in the middle.
+    * **analogRead**: This will read the analog value of a pin, which is a value from 0 to 4095, where 0 is LOW (GND) and 4095 is HIGH (3.3V). All of the analog pins (A0 to A7) can handle this. analogRead is great for reading data from sensors.
 
-**analogWrite**: Sets the pin to a value between 0 and 255, where 0 is the same as LOW and 255 is the same as HIGH. This is sort of like sending a voltage between 0 and 3.3V, but since this is a digital system, it uses a mechanism called Pulse Width Modulation, or PWM. You could use analogWrite to dim an LED, as an example. 
-
-The Photon has two **DACs (Digital to Analog converters)** onboard connected to pin DAC (A6) and A3, when you select analogWrite on those two pins you can set a value between 0 to 4095 (12bit resolution) and continous analog voltage will be applied at the pin output (not PWM), you can use it for controlling electronic devices that require precision analog voltage setting. Those two pins will be marked in orange color when activated in analogWrite mode (instead of yellow color for the rest of the PWM-enabled pins).
-
-**digitalRead**: This will read the digital value of a pin, which can be read as either HIGH or LOW. If you were to connect the pin to 3.3V, it would read HIGH; if you connect it to GND, it would read LOW. Anywhere in between, it'll probably read whichever one it's closer to, but it gets dicey in the middle.
-
-**analogRead**: This will read the analog value of a pin, which is a value from 0 to 4095, where 0 is LOW (GND) and 4095 is HIGH (3.3V). All of the analog pins (A0 to A7) can handle this. analogRead is great for reading data from sensors.
-
+   
 ### In-class Exercises/Challenges: 
 * Hello World Web Page thru C9.
 * Build HTML/Javascript version of Madlibs.
 * Photo Exercise 1: Control the RGB LED.
 * Photon Exercise 2: Blink the D0 and D7 LEDs.
-* Build the Morse Code Flasher App.
+* Build a Morse Code Flasher App.
 
 ### Vocabulary:
-Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS, IP Address, HTTP Request, HTTP Respond, Client Side Programming, Server Side Programming, Microcontroller, Micro-Computer
+Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS, IP Address, HTTP Request, HTTP Respond, Client Side Programming, Server Side Programming, Microcontroller, Micro-Computer, Digital to Analog Converter (DAC)
 
 ### HTML Tags:
 
 ### JavaScript:
 
 ### C /C#:
-digitalWrite, analogWrite, Digital to Analog Converter (DAC), digitalWrite, analogWrite, 
+ RGB, control(), color(), delay(), int, long, float, double, string, array, pinMode(), digitalWrite(), analogWrite(), digitalRead(), analogRead()  
 
+ 
+
+
+
+   
 
 
 
