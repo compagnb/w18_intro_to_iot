@@ -55,22 +55,27 @@
     * Control the blue LED.
     * Build the Morse Code Flasher App.
 * **Vocabulary**:
-    * 
+    * Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS, IP Address, HTTP Request, HTTP Respond, Client Side Programming, Server Side Programming, Microcontroller, Micro-Computer, Digital to Analog Converter (DAC)
 
-#### Week 2: Schematics
-* Breadboards 
-    * How they work
-    * Fritzing/schematics
+#### Week 2: Schematics & Relays
+* Breadboards/Schematics
+    * How It Works?
+    * How To Read/Draw A Schematic
+    * Fritzing
+    * Wiring External Components
 * Digital Inputs/outputs
-* Security
+    * INPUT PinModes
+    * digitalRead()
+* Web Relays
 * **In-class Exercise/Challenges**:
+    * Blink An External LED.
+    * Use An External LED in the Morse Flasher App.
     * Add a switch to the Morse Flasher App.
     * Control an LED over the Internet.
     * Controlling Relays from a Web Page
 
 #### Week 3: Internet Communication
-* Security
-* Web Relays
+* Pulse Width Modulation (PWM)
 * Analog Input/output
 * **In-class Exercise/Challenges**:
     * Controlling Relays from a Web Page

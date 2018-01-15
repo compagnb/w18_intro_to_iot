@@ -223,9 +223,9 @@ type name(type parameter1, type parameter2 ){
 * **string** is used to hold text, as with other languages.
     * You can also use the **length** function to determine the length of a string or the **charAt** to determine the letter at a specific space. The charAt method will count from 0 like an array, so take that into account when coding.
     ```C
-    string = "strings are just text";
-    strLength = string.length();
-    thirdCharacter = string.charAT(2);
+    String s= "strings are just text";
+    int strLength = string.length();
+    char thirdCharacter = string.charAT(2);
     ```
 * **Arrays** will hold multiple variables. They need a type to declare, and have **[]** after the name. For example:
 ``` C
@@ -239,8 +239,10 @@ int numbArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9 }
     ```
 * Basic **if** Statements are written like so:
 ```C
-if (i > 10){
-    //Do something
+if (temp > 30){
+    freeze();
+}else{
+    melt();
 }
 ```
     * **==** is used to say something is equal to
@@ -251,7 +253,7 @@ if (i > 10){
     * **>=** is used to say something is greater than or equal to
 * If you have more then one condition that needs to be met, they can be written like so:
 ```C
-if (i > 10 && i < 20){
+if (letter >= 'a' && letter <= 'z'){
     //Do something
 }
 ```
@@ -262,7 +264,6 @@ if (i > 10 && i < 20){
     * **digitalRead**: This will read the digital value of a pin, which can be read as either HIGH or LOW. If you were to connect the pin to 3.3V, it would read HIGH; if you connect it to GND, it would read LOW. Anywhere in between, it'll probably read whichever one it's closer to, but it gets dicey in the middle.
     * **analogRead**: This will read the analog value of a pin, which is a value from 0 to 4095, where 0 is LOW (GND) and 4095 is HIGH (3.3V). All of the analog pins (A0 to A7) can handle this. analogRead is great for reading data from sensors.
 
-   
 ### In-class Exercises/Challenges: 
 * Hello World Web Page thru C9.
 * Build HTML/Javascript version of Madlibs.
@@ -278,7 +279,7 @@ Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS,
 ### JavaScript:
 
 ### C /C#:
- RGB, control(), color(), delay(), int, long, float, double, string, array, pinMode(), digitalWrite(), analogWrite(), digitalRead(), analogRead()  
+ RGB, control(), color(), delay(), int, long, float, double, string, length(), charAt, char, array, pinMode(), digitalWrite(), analogWrite(), digitalRead(), analogRead()  
 
  
 
