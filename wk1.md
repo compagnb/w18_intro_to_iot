@@ -173,39 +173,7 @@ void loop(){
 ```
 * The **delay** function hold a numberic parameter representative of milliseconds. This function will stop the loop from running until the amount of millisends in the parameter has passed. This is really important when creating applications that will update data... too long a delay may create a lag in the information, while to short of a delay could create a communication error. 
 
-#### Photon Exercise 2: Blink the D0 and D7 LEDs
-* In order to blink LEDs set to other pins on the Photon board, first we need to declare **global** variables to hold the pin information. 
-``` C
-int led0 = D0;
-int led7 = D7;
- ```
-    * These are declared first and outside of all other functions, so that they can be used in all of the functions we write. These types are variables are also known as **Global**.
-    * Notice how each of the variables have a type defined next to the name. Even though they may not look like numbers, they are the pin number that we are assigning.  
-    * The **D0** pin does not control an LED on the photon board itself, so we will need to wire an LED to the pin labeled D0 (Digital 0). 
-    * The **D7** pin not only controls the D7 (Digital 7) pin, but also controls a small LED next to it on the board. 
-* With the variables declared, now we have to initialize them. This will take place in the **set up function**.
-``` C
-void setup(){
-    // initialize the pins as output
-    pinMode(led0, OUTPUT);
-    pinMode(led7, OUTPUT);
-}
-```
-    * The **pinMode** function requires two parameters, one to list what pin will be setup and the other to tell us how that pin will be used. 
-    * **OUTPUT** allows us to controll the voltage flowing out of that pin, while **INPUT** allows us to read what is coming into that pin. * The **pinMode** is called in the **setup** function/method, because it only needs to be called once. 
-* Now that each of our pins are declared and initialized, we can turn them on and off in the **loop** method. 
-``` C
-void loop(){
-    digitalWrite(led0, HIGH);
-    digitalWrite(led7, HIGH);
-    delay(1000);
-    digitalWrite(led0, LOW);
-    digitalWrite(led7, LOW);
-    delay(1000);
-}
-```
-    * The **digitalWrite** function takes two parameters, one for the pin and one for HIGH or LOW. It sets the pin to HIGH or LOW, which either connects it to 3.3V (the maximum voltage of the system) or to GND (ground). 
-   
+
 ### Creating Custom Functions/Methods
 * Up until now, we have only been using built-in functions, but you can also write custom functions as you can when coding in other languages. 
 * These follow the same format as the **setup** and **loop** functions
@@ -259,10 +227,6 @@ if (letter >= 'a' && letter <= 'z'){
 ```
     * **&&** is used to say both conditions need to be met
     * **||** is used to say the one of the conditions need to be met
-* In addition to digitalWrite, there are some other built in functions that control pin activity:
-    * **analogWrite**: Sets the pin to a value between 0 and 255, where 0 is the same as LOW and 255 is the same as HIGH. This is sort of like sending a voltage between 0 and 3.3V, but since this is a digital system, it uses a mechanism called Pulse Width Modulation, or PWM. You could use analogWrite to dim an LED, as an example. 
-    * **digitalRead**: This will read the digital value of a pin, which can be read as either HIGH or LOW. If you were to connect the pin to 3.3V, it would read HIGH; if you connect it to GND, it would read LOW. Anywhere in between, it'll probably read whichever one it's closer to, but it gets dicey in the middle.
-    * **analogRead**: This will read the analog value of a pin, which is a value from 0 to 4095, where 0 is LOW (GND) and 4095 is HIGH (3.3V). All of the analog pins (A0 to A7) can handle this. analogRead is great for reading data from sensors.
 
 ### In-class Exercises/Challenges: 
 * Hello World Web Page thru C9.
@@ -279,7 +243,7 @@ Internet Of Things (IoT), Browser, Web Server, Protocol, Server, Path, ISP, DNS,
 ### JavaScript:
 
 ### C /C#:
- RGB, control(), color(), delay(), int, long, float, double, string, length(), charAt, char, array, pinMode(), digitalWrite(), analogWrite(), digitalRead(), analogRead()  
+ RGB, control(), color(), delay(), int, long, float, double, string, length(), charAt, char, array
 
  
 
